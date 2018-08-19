@@ -3,7 +3,7 @@ function createBackgroundGrid() {
   grid.width = width;
   grid.height = height;
   const gridContext = grid.getContext('2d');
-  
+
   gridContext.fillStyle = '#FFFFFF';
   gridContext.fillRect(0, 0, width, height);
 
@@ -13,7 +13,6 @@ function createBackgroundGrid() {
 
   const column_width = 15;
   for (let i = offset; i <= width; i += column_width) {
-    console.log(i);
     gridContext.beginPath();
     gridContext.moveTo(i, -1);
     gridContext.lineTo(i, height + 1);
