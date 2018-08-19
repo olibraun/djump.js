@@ -3,10 +3,14 @@ function createBackgroundGrid() {
   grid.width = width;
   grid.height = height;
   const gridContext = grid.getContext('2d');
+  
   gridContext.fillStyle = '#FFFFFF';
   gridContext.fillRect(0, 0, width, height);
+
   const offset = (Math.random() / 2) * 10;
+
   gridContext.strokeStyle = '#000000';
+
   const column_width = 15;
   for (let i = offset; i <= width; i += column_width) {
     console.log(i);
@@ -16,6 +20,7 @@ function createBackgroundGrid() {
     gridContext.stroke();
     gridContext.closePath();
   }
+
   const column_height = 15;
   for (let i = offset; i <= height; i += column_height) {
     gridContext.beginPath();
@@ -24,5 +29,6 @@ function createBackgroundGrid() {
     gridContext.stroke();
     gridContext.closePath();
   }
+
   return grid;
 }
