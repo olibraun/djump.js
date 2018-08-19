@@ -3,4 +3,9 @@ class vector2D {
     this.x = x;
     this.y = y;
   }
+
+  addVector(v) {
+    this.x += v.x;
+    this.y += v.y;
+  }
 }
