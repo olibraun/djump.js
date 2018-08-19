@@ -11,3 +11,7 @@ const grid = createBackgroundGrid();
 
 // Draw background grid
 context.drawImage(grid, 0, 0);
+
+// Initialize player
+const player = new Player();
+player.render(context);
