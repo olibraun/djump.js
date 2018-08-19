@@ -1,5 +1,4 @@
 const canvas = document.getElementById('canvas');
-const context = canvas.getContext('2d');
 const width = canvas.width;
 const height = canvas.height;
 
@@ -9,9 +8,22 @@ const height = canvas.height;
 // Create background grid
 const grid = createBackgroundGrid();
 
-// Draw background grid
-context.drawImage(grid, 0, 0);
-
 // Initialize player
 const player = new Player();
-player.render(context);
+
+function main() {
+  const context = canvas.getContext('2d');
+
+  // Draw background grid
+  context.drawImage(grid, 0, 0);
+
+  // Update player
+  player.update();
+
+  // Render player
+  player.render(context);
+
+  requestAnimationFrame(main);
+}
+
+main();
