@@ -11,6 +11,9 @@ const grid = createBackgroundGrid();
 // Initialize player
 const player = new Player();
 
+// Create one platform
+const platform = new Platform(width / 2 - 35, 600, 70);
+
 function main() {
   const context = canvas.getContext('2d');
 
@@ -22,6 +25,9 @@ function main() {
 
   // Render player
   player.render(context);
+
+  // Render platform
+  platform.render(context);
 
   requestAnimationFrame(main);
 }
