@@ -8,6 +8,16 @@ class Player {
     this.gravity = new vector2D(0, .05);
   }
 
+  collidesWithPlatform(platform) {
+    if(this.pos.x >= platform.x && this.pos.x + this.width <= platform.x + platform.width) {
+      if(this.pos.y + this.height >= platform.y && this.pos.y <= platform.y + platform.height ) {
+        return true;
+      }
+    } else {
+      return false;
+    }
+  }
+
   update() {
     // Physics
     this.acc.addVector(this.gravity);
